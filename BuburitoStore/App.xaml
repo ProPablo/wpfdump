@@ -1,0 +1,69 @@
+﻿<Application x:Class="BuburitoStore.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:BuburitoStore"
+             xmlns:viewModel="clr-namespace:BuburitoStore.ViewModels"
+             xmlns:view="clr-namespace:BuburitoStore.Views"
+             xmlns:i="using:Microsoft.Xaml.Interactions.Core"
+             StartupUri="/Views/MainWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+
+
+
+
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Theme/ViewCard.xaml" />
+                <ResourceDictionary Source="Theme/GameCard.xaml" />
+                
+
+            </ResourceDictionary.MergedDictionaries>
+
+            <!--
+
+            <DataTemplate DataType="{x:Type viewModel:MainViewModel}">
+                <view:MainWindow />
+            </DataTemplate>
+            
+            
+            <DataTemplate x:Key="BasicModelDataTemplate">
+                <Grid>
+                    <TextBlock Text="{Binding Text}">
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="MouseLeftButtonUp">
+                        <i:InvokeCommandAction Command="{Binding DataContext.SelectItemRelayCommand, 
+                                RelativeSource={RelativeSource FindAncestor, 
+                                        AncestorType={x:Type ItemsControl}}}"
+                                               CommandParameter="{Binding Id}">                                
+                        </i:InvokeCommandAction>
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+                    </TextBlock>
+                </Grid>
+            </DataTemplate>
+            
+            
+            
+            Following needed to actually instantiate the UserControl along with thte ViewModel
+            -->
+
+
+            <DataTemplate DataType="{x:Type viewModel:HomeViewModel}">
+                <view:HomeView />
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModel:FrostShrineViewModel}">
+                <view:FrostShrine />
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModel:KanyeRestViewModel}">
+                <view:KanyeView />
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModel:SpareViewModel}">
+                <view:SpareView />
+            </DataTemplate>
+
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

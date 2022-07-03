@@ -1,0 +1,74 @@
+﻿<UserControl x:Class="BuburitoStore.Views.HomeView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:BuburitoStore.Views"
+             xmlns:vms="clr-namespace:BuburitoStore.ViewModels"
+             mc:Ignorable="d"
+             d:DesignHeight="700"
+             d:DesignWidth="800">
+    <UserControl.DataContext>
+        <vms:HomeViewModel />
+    </UserControl.DataContext>
+
+    <StackPanel>
+        <TextBlock Text="Hey man! Check these out..."
+                   Foreground="White"
+                   FontSize="28"
+                   HorizontalAlignment="Left"
+                   Margin="0,0,0,20" />
+
+        <TextBlock Text="{Binding TimerText}"
+                   Padding="300,0,0,0" 
+                   Foreground="White" />
+        <Border Width="270"
+                Height="400"
+                Background="Black"
+                HorizontalAlignment="Left">
+
+            <Border.Clip>
+                <RectangleGeometry RadiusX="30"
+                                   RadiusY="30"
+                                   Rect="0,0,270,400" />
+            </Border.Clip>
+
+            <Image Width="270"
+                   Height="400"
+                   Source="{Binding SelectedGame.ImageURL}" />
+        </Border>
+        <TextBlock Text="{Binding SelectedItem.Name, ElementName=list}"
+                   Padding="300,0,0,0" 
+                   Foreground="White" />
+        <StackPanel Margin="0,10,0,0">
+            <TextBlock Text="Choose some of these games"
+                       Foreground="White"
+                       FontSize="20"
+                       HorizontalAlignment="Left"
+                       Margin="0,0,0,20" />
+            <ListView 
+                      ItemsSource="{Binding Games}"
+                      Background="Transparent"
+                      d:SelectedItem="{Binding SelectedGame}"
+                      SelectedIndex="{Binding SelectedIndex}"
+                      ItemContainerStyle="{StaticResource GameCard}"
+                        BorderThickness="0"
+                x:Name="list"
+
+                >
+                <ListView.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <StackPanel Orientation="Horizontal" />
+                    </ItemsPanelTemplate>
+                </ListView.ItemsPanel>
+
+            </ListView>
+
+            <!--//in wpf if the component has no height,it is not evaluated any further-->
+            <!--<ListViewItem Style="{StaticResource GameCard}"
+                          Height="99" />-->
+
+            <!-- SelectedIndex="{Binding SelectedIndex}"-->
+        </StackPanel>
+    </StackPanel>
+</UserControl>
