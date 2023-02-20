@@ -23,7 +23,7 @@ namespace BuburitoStore.ViewModels
         public ImageURL image { get; set; }
     }
 
-    public class SpareViewModel
+    public class AsyncTestViewModel
     {
         //Prop to update
         public ObservableCollection<ImageURL> FoxImageUrls { get; set; }
@@ -34,8 +34,9 @@ namespace BuburitoStore.ViewModels
 
         const int MAX_FOXES = 5;
 
-        public SpareViewModel()
+        public AsyncTestViewModel()
         {
+
             EffectRelayCommand = new RelayCommand(FillPageAsync);
             FoxImageUrls = new ObservableCollection<ImageURL>();
         }
@@ -45,6 +46,9 @@ namespace BuburitoStore.ViewModels
         //Often labeled as a malpractice, async void used here due to event handling
         private async void FillPageAsync(object sender)
         {
+
+            TransactionPerformanceRegister.CommitCounter.Increment();
+
             //Simple model, sequentially add urls one by one
             foreach (var foxAPI in foxes)
             {

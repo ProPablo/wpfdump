@@ -17,7 +17,7 @@ namespace BuburitoStore.ViewModels
         public HomeViewModel HomeVM { get; private set; }
         public FrostShrineViewModel FrostVM { get; private set; }
         public KanyeRestViewModel KanyeVM { get; set; }
-        public SpareViewModel SpareVM { get; set; }
+        public AsyncTestViewModel SpareVM { get; set; }
 
         //public KanyeRestViewModel KanyeVM { get; set; }
 
@@ -51,7 +51,7 @@ namespace BuburitoStore.ViewModels
             HomeVM = new HomeViewModel();
             FrostVM = new FrostShrineViewModel();
             KanyeVM = new KanyeRestViewModel();
-            SpareVM = new SpareViewModel();
+            SpareVM = new AsyncTestViewModel();
             //homeWindow.DataContext = HomeVM;
 
             CurrentView = HomeVM;

@@ -60,7 +60,7 @@
                 <view:KanyeView />
             </DataTemplate>
 
-            <DataTemplate DataType="{x:Type viewModel:SpareViewModel}">
+            <DataTemplate DataType="{x:Type viewModel:AsyncTestViewModel}">
                 <view:SpareView />
             </DataTemplate>
 

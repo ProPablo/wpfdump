@@ -67,6 +67,9 @@ namespace BuburitoStore.ViewModels
 
         public HomeViewModel()
         {
+
+            TransactionPerformanceRegister.Init();
+
             SelectedIndex = 0;
             Games = new ObservableCollection<Game>(Db.games);
             DispatcherTimer timer = new DispatcherTimer();
