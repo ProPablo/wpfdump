@@ -13,7 +13,8 @@
         mc:Ignorable="d"
         d:WindowStyle="SingleBorderWindow"
         AllowsTransparency="True"
-        ResizeMode="NoResize">
+        ResizeMode="NoResize"
+        >
 
     <!--<Window.DataContext>
         <vms:MainViewModel/>
@@ -86,7 +87,7 @@
                              Style="{StaticResource ViewCard}"
                              IsChecked="True"
                              Command="{Binding HomeViewCommand}" />
-                <RadioButton Content="Worship Here"
+                <RadioButton Content="TEst Here"
                              Height="50"
                              Foreground="White"
                              FontSize="15"

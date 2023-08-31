@@ -74,7 +74,7 @@ namespace BuburitoStore.ViewModels
             FrostShrineCommand = new RelayCommand(e => CurrentView = FrostVM);
             SpareViewCommand = new RelayCommand(e => CurrentView = SpareVM);
 
-            SpareViewCommand = new RelayCommand(e => CurrentView = KanyeVM);
+            //SpareViewCommand = new RelayCommand(e => CurrentView = KanyeVM);
 
 
             //ContentElement thing;

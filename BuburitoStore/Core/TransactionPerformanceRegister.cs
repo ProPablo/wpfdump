@@ -13,32 +13,12 @@ public class TransactionPerformanceRegister
     public static PerformanceCounter CreateCounter;
     public static PerformanceCounter CommitCounter;
 
+    public const string Category = "TandmRevitSample";
+
     public static void Init()
     {
-        CounterCreationDataCollection counterDataCollection = new CounterCreationDataCollection();
-        Debugger.Break();
-
-        // Add the counter.
-        CounterCreationData averageCount64 = new CounterCreationData();
-        //What are the rest of these types
-        averageCount64.CounterType = PerformanceCounterType.NumberOfItems32;
-        averageCount64.CounterName = "CreateTransactionToken";
-        counterDataCollection.Add(averageCount64);
-
-        // Add the base counter.
-        CounterCreationData averageCount64Base = new CounterCreationData();
-        averageCount64Base.CounterType = PerformanceCounterType.NumberOfItems32;
-        averageCount64Base.CounterName = "CommitTransactionToken";
-        counterDataCollection.Add(averageCount64Base);
-
-        // Create the category.
-        PerformanceCounterCategory.Create("TandmRevit",
-            "Demonstrates usage of the AverageCounter64 performance counter type.",
-            PerformanceCounterCategoryType.SingleInstance, counterDataCollection);
-
-
-        CreateCounter = new PerformanceCounter("TandmRevit", "CreateTransactionToken", false);
-        CommitCounter = new PerformanceCounter("TandmRevit", "CommitTransactionToken", false);
+        CreateCounter = new PerformanceCounter(Category, "CreateTransactionToken", false);
+        CommitCounter = new PerformanceCounter(Category, "CommitTransactionToken", false);
     }
 
 }

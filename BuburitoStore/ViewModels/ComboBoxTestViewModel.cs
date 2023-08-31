@@ -12,14 +12,14 @@ using System.Windows.Input;
 
 namespace BuburitoStore.ViewModels
 {
-    public class ComboBoxTestViewModel
+    public class FrostShrineViewModel
     {
         //public UserControl windowControl;
         public RelayCommand AughRelayCommand { get; set; }
 
         private List<SoundPlayer> aughs = new List<SoundPlayer>();
 
-        public ComboBoxTestViewModel ()
+        public FrostShrineViewModel()
         {
             AughRelayCommand = new RelayCommand(Augh);
             var aughStrings = new string[] { "augh0", "augh1", "augh2" };
